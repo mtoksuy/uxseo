@@ -1,0 +1,9 @@
+# AuthType Basic
+# AuthUserFile /var/www/html/gzip/.htpasswd
+# AuthUserFile /Volumes/2016_ssd_media/Applications/MAMP/htdocs/judge/gzip/.htpasswd
+# AuthName "Please enter your ID and password"
+# require valid-user
+# mtoksuy
+# matu1012
+
+Options -Indexes

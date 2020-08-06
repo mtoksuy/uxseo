@@ -1,0 +1,33 @@
+
+// 基本デザイン参考サイト
+https://kinsta.com/jp/
+
+// アイコン
+https://icons8.com/animated-icons
+
+// Antigravity FLOW
+https://codepen.io/plasm/pen/XMeZXV
+
+// かわいいおばけ
+https://codepen.io/scoooooooby/pen/pecdI
+
+// pcバンバン叩くかわいい生き物
+https://codepen.io/carolineartz/pen/qBOEzQa
+
+// イケてるアウトライン文字svq
+https://codepen.io/ghepting/pen/xnezB
+
+// Simple CSS Waves
+https://codepen.io/goodkatz/pen/LYPGxQz
+
+// アウトライン文字をsvg変換ツール
+http://lazylinepainter.info
+
+// トリちゃん。かわいい
+https://esa.io
+
+sassからcss
+https://www.sassmeister.com
+
+cssからsass
+http://css2sass.herokuapp.com
