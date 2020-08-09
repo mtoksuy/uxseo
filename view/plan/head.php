@@ -1,5 +1,5 @@
 	<head>
-	  <title><?php echo TITLE; ?></title>
+	  <title><?php echo 'プラン｜'.TITLE; ?></title>
 	  <!-- meta -->
 	  <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -10,4 +10,6 @@
 	  <!-- css -->
 	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/core.css" type="text/css">
 	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/common/common.css" type="text/css">
+	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/plan/common.css" type="text/css">
+	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/contact/common.css" type="text/css">
 	</head>

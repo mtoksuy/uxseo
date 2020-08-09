@@ -16,6 +16,7 @@
 	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/plugin/antigravity.css" type="text/css">
 	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/plugin/simple_css_waves.css" type="text/css">
 	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/plugin/bongo_cat_codes.css" type="text/css">
+	  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	</head>
 
 

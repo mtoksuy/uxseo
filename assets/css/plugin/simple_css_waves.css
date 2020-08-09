@@ -14,7 +14,7 @@
   margin-bottom:-7px; /*Fix for safari gap*/
   min-height:100px;
   max-height:150px;
-  background-color: #B4E1FC;
+  background-color: #4995FF;
 }
 
 .content {
@@ -53,6 +53,21 @@
     transform: translate3d(85px,0,0);
   }
 }
+
+
+
+
+.wave_tops {
+	width: 100%;
+	height: 340px;
+	background-color: #4995FF;
+	transform: skewY(-5deg);
+	position: relative;
+	top: 150px;
+}
+
+
+
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
@@ -66,3 +81,16 @@
     font-size:24px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

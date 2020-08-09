@@ -133,7 +133,8 @@ main
 section_block
 ************/
 .section_block {
-
+	padding-top: 50px;
+	margin-top: -50px;
 }
 .section_function_block {
 	margin: 0 0 150px 0;
@@ -265,6 +266,34 @@ section_block_box_right
 }
 
 
+
+
+/****
+事例
+****/
+.section_block .cace_block {
+	margin: 0 auto 30px;
+	width: 50%;
+}
+.section_block .cace_block:nth-child(3) {
+
+}
+.section_block .cace_block h3 {
+	font-size: 30px;
+	color: rgb(255, 142, 142);
+	color: rgb(97, 129, 154);
+}
+.section_block .cace_block .cace_block_h4 {
+	font-size: 24px;
+}
+.section_block .cace_block .cace_block_h5 {
+	font-size: 24px;
+	display: inline-block;
+	background:linear-gradient(transparent 75%, #3C93FF 0%);
+}
+.section_block .cace_block p {
+
+}
 
 
 
@@ -511,12 +540,19 @@ problem_solving_v4
 .problem_solving_v4 ul li .problem_solving_li_inner .button {
 	background-color: rgb(46, 181, 29);
 	display: inline-block;
-	padding: 2px 7px 2px 7px;
+	padding: 2px 0px 2px 0px;
 	color: #fcfcfc;
 	margin: 15px 0px 30px 0px;
 	border-radius: 2px;
 	cursor: pointer;
 	min-width: 64px;
+}
+.problem_solving_v4 ul li .problem_solving_li_inner .button a {
+	color: #fcfcfc;
+	padding: 8px 10px;
+}
+.problem_solving_v4 ul li .problem_solving_li_inner .button a:visited {
+	color: #fcfcfc;
 }
 
 .problem_solving_v4 ul li .problem_solving_li_inner .plan_box {
@@ -626,39 +662,78 @@ problem_solving_v4
 .contact_prompt {
 	width: 100%;
 	margin: 15px auto 50px;
-	background-color: #f8f8f8;
+
 	padding: 50px 0;
 }
 .contact_prompt .contact_prompt_inner {
-	width: 95%;
+	width: 70%;
 	margin: 0 auto;
 	position: relative;
+	display: flex;
+	flex-wrap: wrap;
 }
 .contact_prompt .contact_prompt_inner p {
 	float: left;
 	font-size: 22px;
-	color: #111;
+	color: #3C93FF;
 	margin: 0 0 0 35px;
+}
+.contact_prompt .contact_prompt_inner p span {
+	color: #111;
 }
 .contact_prompt .contact_prompt_inner .contact_prompt_button {
 	position: relative;
-	right: 35px;
-	float: right;
-	background-color: #3E91FF;
-	color: #fff;
+	 right: -48px;
+	abackground-color: rgb(46, 181, 29);
+	color: #282828;
+	border: solid 1px #3E91FF;
 	cursor: pointer;
+	display: inline-flex;
+	margin: 0 10px 0 0;
 	border-radius: 2px;
 	font-size: 20px;
 }
 .contact_prompt .contact_prompt_inner .contact_prompt_button a {
-	color: #fff;
+	color: #282828;
 	display: block;
 	padding: 10px 20px;
 }
 .contact_prompt .contact_prompt_inner .contact_prompt_button a:visited {
-	color: #fff;
+	color: #282828;
 }
 
+.contact_prompt .contact_prompt_inner .contact_prompt_button.v2 {
+	position: relative;
+	 right: -48px;
+	background-color: #3E91FF;
+	cursor: pointer;
+	border: solid 0px rgb(46, 181, 29);
+	display: inline-flex;
+	margin: 0 10px 0 0;
+	border-radius: 2px;
+	font-size: 20px;
+}
+.contact_prompt .contact_prompt_inner .contact_prompt_button.v2 a {
+	color: #fff;
+}
+.contact_prompt .contact_prompt_inner .contact_prompt_button.v2 a:visited {
+	color: #fff;
+
+}
+
+
+
+
+.contact_prompt .contact_prompt_inner .contact_prompt_inner_left {
+	width: 60%;
+}
+.contact_prompt .contact_prompt_inner .contact_prompt_inner_left p {
+	margin: 0;
+}
+.contact_prompt .contact_prompt_inner .contact_prompt_inner_right {
+	width: 40%;
+	
+}
 
 
 
@@ -755,6 +830,126 @@ footer
 }
 
 
+
+
+
+/*******************
+1366px以下の設定
+*******************/
+@media screen and (min-width: 0px) and (max-width: 1366px) {
+	.problem_solving_v2 ul li {
+
+	}
+	.problem_solving_v2 ul li .problem_solving_li_inner {
+
+	}
+	.problem_solving_v2 ul li .problem_solving_li_inner img {
+
+	}
+	
+/*
+	.problem_solving_v3 {
+	width: 100%;
+	}
+	.problem_solving_v3 ul li:nth-child(-1n+2) {
+		flex-basis: 100%;
+	}
+	.problem_solving_v3 ul li {
+		flex-basis: 100%;
+	}
+	.problem_solving_v4 {
+		width: 100%;
+	}
+	.problem_solving_v4 ul li {
+		flex-basis: 100%;
+	}
+	.problem_solving_v4 ul li .problem_solving_li_inner {
+		margin: 0 auto;
+	}
+
+*/
+	
+	.contact_prompt .contact_prompt_inner {
+	width: 100%;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_inner_left {
+	width: 100%;
+	flex-wrap: wrap;
+		margin: 0 0 30px 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_inner_right {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		justify-content:center;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button {
+		width: 48%;
+		right: 0;
+		margin: 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button:nth-child(1)  {
+		margin: 0 5px 0 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button.v2 {
+		right: 0;
+		margin: 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button a {
+		margin: 0 auto;
+	}
+	.wave_tops {
+		margin: -80px 0 0 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**************
 1028px以下の設定
 **************/
@@ -819,25 +1014,129 @@ footer
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**************
 640px以下の設定
 **************/
 @media screen and (min-width: 0px) and (max-width: 640px) {
+	.problem_solving_v2 ul li {
+		padding: 5px;
+		flex-basis: 100%;
+	}
+	.problem_solving_v2 ul li .problem_solving_li_inner {
+		padding: 15px;
+	}
+	.problem_solving_v2 ul li .problem_solving_li_inner img {
+	margin: 0 0 20px 0;
+	}
+	
+	.problem_solving_v3 {
+	width: 100%;
+	}
+	.problem_solving_v3 ul li:nth-child(-1n+2) {
+		flex-basis: 100%;
+	}
+	.problem_solving_v3 ul li {
+		flex-basis: 100%;
+	}
+	.problem_solving_v3 ul li .problem_solving_li_inner {
+		width: 100%;
+	}
+
+
+
+
+
+
+
+/****
+事例
+****/
+.section_block .cace_block {
+	margin: 0 auto 30px;
+	width: 100%;
+}
+
+.section_block .cace_block .cace_block_inner {
+	margin: 0 15px;
+}
+.section_block .cace_block h3 {
+	font-size: 30px;
+	color: rgb(255, 142, 142);
+	color: rgb(97, 129, 154);
+}
+.section_block .cace_block .cace_block_h4 {
+	font-size: 24px;
+}
+.section_block .cace_block .cace_block_h5 {
+	font-size: 24px;
+	display: inline-block;
+	background:linear-gradient(transparent 75%, #3C93FF 0%);
+}
+.section_block .cace_block p {
+
+}
+
+
+
+
+
+	.problem_solving_v4 {
+		width: 100%;
+	}
+	.problem_solving_v4 ul li {
+
+	}
+	.problem_solving_v4 ul li .problem_solving_li_inner {
+		margin: 0 auto;
+	}
+
+
+
+
+
+
+	
+	.contact_prompt .contact_prompt_inner {
+	width: 100%;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_inner_left {
+	width: 100%;
+	flex-wrap: wrap;
+		margin: 0 0 30px 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_inner_right {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		justify-content:center;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button {
+		width: 48%;
+		right: 0;
+		margin: 0;
+		font-size: 13px;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button:nth-child(1)  {
+		margin: 0 5px 0 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button.v2 {
+		right: 0;
+		margin: 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button a {
+		font-size: 13px;
+		margin: 0 auto;
+	}
+	.wave_tops {
+		margin: -146px 0 0 0;
+	}
+
+
+
+
+
+
 	/**********
 	top_gallery
 	**********/
@@ -973,26 +1272,85 @@ footer
 
 
 }
-/**************
+/*******************
 320px以下の設定
-**************/
+*******************/
 @media screen and (min-width: 0px) and (max-width: 320px) {
+	.problem_solving_v2 ul li {
+		padding: 5px;
+		flex-basis: 100%;
+	}
+	.problem_solving_v2 ul li .problem_solving_li_inner {
+		padding: 15px;
+	}
+	.problem_solving_v2 ul li .problem_solving_li_inner img {
+	margin: 0 0 20px 0;
+	}
+	
+	.problem_solving_v3 {
+	width: 100%;
+	}
+	.problem_solving_v3 ul li:nth-child(-1n+2) {
+		flex-basis: 100%;
+	}
+	.problem_solving_v3 ul li {
+		flex-basis: 100%;
+	}
+	.problem_solving_v4 {
+		width: 100%;
+	}
+	.problem_solving_v4 ul li {
+		flex-basis: 100%;
+	}
+	.problem_solving_v4 ul li .problem_solving_li_inner {
+		margin: 0 auto;
+	}
+	
+	.contact_prompt .contact_prompt_inner {
+	width: 100%;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_inner_left {
+	width: 100%;
+	flex-wrap: wrap;
+		margin: 0 0 30px 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_inner_right {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		justify-content:center;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button {
+		width: 48%;
+		right: 0;
+		margin: 0;
+		font-size: 13px;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button:nth-child(1)  {
+		margin: 0 5px 0 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button.v2 {
+		right: 0;
+		margin: 0;
+	}
+	.contact_prompt .contact_prompt_inner .contact_prompt_button a {
+		font-size: 13px;
+		margin: 0 auto;
+	}
+	.wave_tops {
+		margin: -146px 0 0 0;
+	}
 	.top_gallery {
 		height: auto;
 	}
 	.top_gallery .top_gallery_inner {
 
 	}
-	.top_gallery_back img {
+	.top_gallery_back imgg {
 		top: -50px;
 		right: -123px;
 		width: 100%;
 		height: auto;
 	}
 }
-
-
-
-
-
-

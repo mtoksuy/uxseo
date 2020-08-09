@@ -14,7 +14,7 @@
 					<?php require_once(PATH.'view/root/content.php'); /* content読み込み*/ ?>
 				</div>
 			</div> <!-- main -->
-			<?php require_once(PATH.'view/basic/footer.php'); /* footer読み込み*/ ?>
+			<?php require_once(PATH.'view/root/footer.php'); /* footer読み込み*/ ?>
 		</div> <!-- wrapper -->
 		<?php require_once(PATH.'view/root/head_footer.php'); /* head_footer読み込み*/ ?>
 	</body>

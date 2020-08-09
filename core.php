@@ -40,7 +40,7 @@ if(preg_match('/localhost/',$_SERVER["HTTP_HOST"])) {
 	// 本番環境
 	else {
 		// デフォルト変数生成
-		define('HTTP', 'http://'.$_SERVER["HTTP_HOST"].'/');
+		define('HTTP', 'https://'.$_SERVER["HTTP_HOST"].'/');
 		define('PATH', $_SERVER["DOCUMENT_ROOT"].'/');
 		define('INTERNAL_PATH', $_SERVER["DOCUMENT_ROOT"]);
 		define('TITLE', 'UXSEO [1億PVから研究した2020年最新のSEO決定版サービス]');
@@ -89,8 +89,8 @@ UXSEO_Search_Analytics
 /*************
 モデルsecurity
 *************/
-//require_once(PATH.'classes/library/security/basis.php');
-//$library_security_basis = new library_security_basis();
+require_once(PATH.'classes/library/security/basis.php');
+$library_security_basis = new library_security_basis();
 /*********
 モデルgzip
 *********/
@@ -102,8 +102,8 @@ UXSEO_Search_Analytics
 /*********
 モデルmail
 *********/
-//require_once(PATH.'classes/model/mail/basis.php');
-//$model_mail_basis = new model_mail_basis();
+require_once(PATH.'classes/model/mail/basis.php');
+$model_mail_basis = new model_mail_basis();
 /*************
 モデルsecurity
 *************/
