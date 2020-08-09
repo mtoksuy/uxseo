@@ -1,0 +1,432 @@
+
+
+/****
+plan
+****/
+.plan {
+
+}
+.plan .plan_inner {
+	width: 65%;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+.plan .plan_inner .plan_title_top {
+	font-size: 24px;
+	color: #3C93FF;
+	font-weight:bold;
+	margin: 0 0 30px 0;
+}
+.plan .plan_inner .plan_title {
+	font-size: 28px;
+	color: #2f2f2f;
+	text-align: center;
+	margin: 0 0 30px 0;
+}
+.plan .plan_inner .plan_title_bottom {
+	font-size: 16px;
+	text-align: center;
+	margin:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.plan .plan_inner form {
+	position:relative;
+	background-color: #fafafa;
+	box-shadow: 1px 1px 2px 0px rgba(47,47,47,.1);
+	padding: 35px;
+	border-radius: 3px;
+}
+.plan .plan_inner form label {
+	display: block;
+	color: #a5a5a5;
+}
+.plan .plan_inner form select {
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid #a5a5a5;
+	padding: 18px;
+	border-radius: 2px;
+	box-sizing:border-box;
+	font-size: 18px;
+	color: #3a3e40;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.plan .plan_inner form .select {
+		position:relative;
+	margin:0 0 30px 0;
+}
+.plan .plan_inner form .select:before {
+	content: '';
+	position: absolute;
+	right: 23px;
+	top: 25px;
+	width: 8px;
+	height: 8px;
+	border-top: 2px solid #a5a5a5;
+	border-right: 2px solid #a5a5a5;
+	-webkit-transform: rotate(130deg);
+	transform: rotate(130deg);
+}
+
+.plan .plan_inner form select option {
+
+}
+.plan .plan_inner form input[type="text"],
+.plan .plan_inner form input[type="email"] {
+	color: #3a3e40;
+	margin:0 0 30px 0;
+	padding: 18px;
+	width: 100%;
+	font-size: 18px;
+	box-sizing:border-box;
+	border-radius: 2px;
+	border: 1px solid #a5a5a5;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.plan .plan_inner form textarea {
+	color: #3a3e40;
+	margin:0 0 30px 0;
+	padding: 18px;
+	width: 100%;
+	font-size: 18px;
+	height: 175px;
+	box-sizing:border-box;
+	border-radius: 2px;
+	border: 1px solid #a5a5a5;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.plan .plan_inner form input[type="submit"] {
+	cursor: pointer;
+	color: #fcfcfc;
+	background-color: #3C93FF;
+	margin:0 0 30px 0;
+	padding: 18px;
+	width: 100%;
+	font-size: 18px;
+	box-sizing:border-box;
+	border-radius: 2px;
+	border: 0px solid #a5a5a5;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+
+
+
+
+/*******
+
+*******/
+.confirm {
+	margin: 0 0 30px 0;
+}
+.confirm .confirm_block {
+
+}
+.confirm .confirm_block .confirm_title {
+	color: #a5a5a5;
+	margin: 0;
+}
+.confirm .confirm_block .confirm_content {
+
+}
+
+/*******
+
+*******/
+.plan .plan_inner .confirm_form {
+
+}
+.plan .plan_inner .confirm_form input[type="submit"] {
+
+}
+.plan .plan_inner .confirm_form {
+	display: flex;
+}
+.plan .plan_inner .confirm_form .left_button {
+	width:50%;
+	margin: 5px;
+	color: #686868;
+	background-color: #ebebeb;
+}
+.plan .plan_inner .confirm_form .right_button {
+	width:50%;
+	margin: 5px;
+}
+
+/***********
+
+**************/
+.plan .plan_inner .contact_form h2 {
+
+}
+.plan .plan_inner .choose {
+
+}
+.plan .plan_inner .choose .choose_inner {
+	margin: 60px auto;
+
+}
+.plan .plan_inner .choose .choose_inner .choose_inner_text {
+	position: relative;
+	text-align: center;
+	background-color: #fff;
+	font-size: 26px;
+	width:60px;
+	height: 30px;
+	margin: 0 auto;
+	z-index: 7;
+}
+.plan .plan_inner .choose .choose_inner .choose_inner_border {
+	border-top: solid 1px #c6c6c6;
+	display: block;
+	top: -14px;
+	position: relative;
+	margin: 0 5%;
+	z-index: 6;
+}
+/************
+*******************/
+.progress_tracker {
+
+}
+.progress_tracker .progress_tracker_inner {
+	width: 65%;
+	margin: 0 auto 65px;
+	display: block;
+	position: relative;
+}
+.progress_tracker .progress_tracker_inner .progress_tracker_point_start {
+	position: relative;
+	border-radius: 50px;
+	width: 24px;
+	height: 24px;
+	top: 13px;
+	margin: 0 0 0 188px;
+	background-color: #3b3b3b;
+	z-index: 7;
+}
+.progress_tracker .progress_tracker_inner .progress_tracker_point_start img {
+	width: 17px;
+	height: auto;
+	left: 3px;
+	top: -8px;
+	position: relative;
+}
+
+
+.progress_tracker .progress_tracker_inner .progress_tracker_bar {
+	border-top: solid 2px #3b3b3b;
+	display: block;
+	position: relative;
+	margin: 0 200px;
+	z-index: 6;
+}
+.progress_tracker .progress_tracker_inner .progress_tracker_point_end {
+	border-radius: 50px;
+	width: 24px;
+	height: 24px;
+	top: 13px;
+	background-color: #3b3b3b;
+	display: block;
+	position: absolute;
+	margin: 0 200px;
+	right: 0px;
+	z-index: 7;
+}
+.progress_tracker .progress_tracker_inner .progress_tracker_point_end:before {
+	position: relative;
+	border-radius: 50px;
+	width: 34px;
+	height: 34px;
+	content:'　';
+	top: -2px;
+	left: 4px;
+	background-color: #fff;
+}
+
+.progress_tracker .progress_tracker_inner .progress_tracker_label {
+	position: relative;
+	top: 12px;
+	margin: 0 0 0 151px;
+}
+.progress_tracker .progress_tracker_inner .progress_tracker_label_current {
+	top: 38px;
+	display: block;
+	position: absolute;
+	margin: 0 178px;
+	right: 0px;
+	z-index: 7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************
+1028px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 1028px) {
+	.plan {
+		margin: 30px 0 0 0;
+	}
+
+	/************
+	************/
+	.progress_tracker .progress_tracker_inner {
+		width: 100%;
+	}
+
+}
+/**************
+640px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 640px) {
+	.main .main_inner {
+		margin: 0 15px;
+	}
+	.plan .plan_inner {
+		width: 100%;
+	}
+
+
+
+
+.plan .plan_inner form select {
+	padding: 14px;
+}
+.plan .plan_inner form .select:before {
+	right: 17px;
+	top: 21px;
+}
+
+.plan .plan_inner form select option {
+
+}
+.plan .plan_inner form input[type="text"],
+.plan .plan_inner form input[type="email"] {
+	padding: 14px;
+	font-size: 16px;
+}
+.plan .plan_inner form textarea {
+	padding: 14px;
+	font-size: 16px;
+}
+.plan .plan_inner form input[type="submit"] {
+	padding: 14px;
+	font-size: 16px;
+}
+
+
+	/************
+	************/
+	.progress_tracker {
+	
+	}
+	.progress_tracker .progress_tracker_inner {
+		width: 100%;
+		margin: 50px auto 65px 0;
+	}
+	.progress_tracker .progress_tracker_inner .progress_tracker_point_start {
+		margin: 0 0 0 30px;
+	}	
+	.progress_tracker .progress_tracker_inner .progress_tracker_bar {
+		margin: 0 30px;
+	}
+	.progress_tracker .progress_tracker_inner .progress_tracker_point_end {
+		margin: 0 30px;
+	}
+	.progress_tracker .progress_tracker_inner .progress_tracker_label {
+		margin: 0 0 0 9px;
+	}
+	.progress_tracker .progress_tracker_inner .progress_tracker_label_current {
+		margin: 0 9px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+/**************
+480px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 480px) {
+
+
+}
+/**************
+320px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 320px) {
+
+}
+
+
+
+
+
+
+
+

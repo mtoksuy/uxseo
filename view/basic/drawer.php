@@ -7,16 +7,16 @@
 						<a class="o_8" href="<?php echo HTTP;?>#service">機能</a>
 					</li>
 					<li>
-						<a class="o_8" href="<?php echo HTTP;?>#service">ツール</a>
+						<a class="o_8" href="<?php echo HTTP;?>#case">事例</a>
 					</li>
 					<li>
-						<a class="o_8" href="<?php echo HTTP;?>#service">メディア</a>
+						<a class="o_8" href="<?php echo HTTP;?>#plan">プラン一覧</a>
 					</li>
 					<li>
-						<a class="o_8" href="<?php echo HTTP;?>#service">プラン一覧</a>
+						<a class="o_8" href="<?php echo HTTP;?>tool/">ツール</a>
 					</li>
 					<li>
-						<a class="o_8" href="<?php echo HTTP;?>contact/">お客様の声</a>
+						<a class="o_8" href="<?php echo HTTP;?>article/">メディア</a>
 					</li>
 					<li>
 						<a class="o_8" href="<?php echo HTTP;?>contact/">お問い合わせ</a>

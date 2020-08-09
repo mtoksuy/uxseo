@@ -39,7 +39,7 @@ class Particle{
         transform: "translateX("+this.coordinates.x+"px) translateY("+this.coordinates.y+"px)"
       }
     })
-    $(".header_antigravity").append(this.item)
+    $(".antigravity").append(this.item)
     return {
       width: this.item.width(),
       height: this.item.height()
