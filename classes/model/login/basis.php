@@ -7,35 +7,29 @@ class model_login_basis  {
 		$query = model_db::query("
 			SELECT *
 			FROM user
-			WHERE	judge_id     = '".$post["login_user"]."'
-			AND   password         = '".md5($post["login_pass"])."'
-
-			OR    email            = '".$post["login_user"]."'
-			AND   password         = '".md5($post["login_pass"])."'");
-//pre_var_dump($query);
-
+			WHERE uxseo_id  = '".$post["user_login"]."'
+			OR    email           = '".$post["user_login"]."'");
 		foreach($query as $key => $value) {
-			// セッション生成
-			$_SESSION["primary_id"]          = $value["primary_id"];
-			$_SESSION["judge_id"]            = $value["judge_id"];
-			$_SESSION["email"]               = $value["email"];
-			$_SESSION["name"]                = $value["name"];
-			$_SESSION["management_site_url"] = $value["management_site_url"];
-			$_SESSION["profile_contents"]    = $value["profile_contents"];
-			$_SESSION["profile_icon"]        = $value["profile_icon"];
-			$_SESSION["twitter_id"]          = $value["twitter_id"];
-			$_SESSION["facebook_id"]         = $value["facebook_id"];
-			$_SESSION["all_page_view"]       = $value["all_page_view"];
-			$_SESSION["creation_time"]       = $value["creation_time"];
-			$_SESSION["update_time"]         = $value["update_time"];
+			if(password_verify($post['user_password'], $value['password'])) {
+				// セッション生成
+				$_SESSION["primary_id"]    = $value["primary_id"];
+				$_SESSION["uxseo_id"]       = $value["uxseo_id"];
+				$_SESSION["email"]            = $value["email"];
+				$_SESSION["create_time"]  = $value["create_time"];
+				$_SESSION["update_time"] = $value["update_time"];
 
-			// クッキー生成(一ヶ月有効)
-			setcookie('judge_id', $value["judge_id"], time() + 2592000, '/');
-			setcookie('judge_login_key', md5($post["login_pass"]), time() + 2592000, '/');
-			Model_Login_Basis::login_history_record($_SESSION["judge_id"]);
-			// 移動
-			header('Location: '.HTTP.'login/admin/');
-			exit;
+				// クッキー生成(一ヶ月有効)
+				setcookie('uxseo_id', $value["uxseo_id"], time() + 2592000, '/');
+				setcookie('uxseo_login_key', $post['user_password'], time() + 2592000, '/');
+				model_login_basis::login_history_record($_SESSION["uxseo_id"]);
+				// 移動
+				header('Location: '.HTTP.'seo-tool/analytics/login/admin/');
+				exit;
+			}
+				else {
+					// ログイン出来ない場合
+					$lohin_message = 'ユーザー名かパスワードが間違っています。';
+				}
 		}
 		// ログイン出来ない場合
 		$lohin_message = 'ユーザー名かパスワードが間違っています。';
@@ -118,13 +112,13 @@ class model_login_basis  {
 	//----------------------
 	//ログイン履歴を記録する
 	//----------------------
-	public static function login_history_record($judge_id) {
+	public static function login_history_record($uxseo_id) {
 		model_db::query("
 			INSERT INTO login_history (
-				judge_id
+				uxseo_id
 			)
 			VALUES (
-				'".$judge_id."'
+				'".$uxseo_id."'
 			)
 		");
 	}

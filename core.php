@@ -54,6 +54,7 @@ if(preg_match('/localhost/',$_SERVER["HTTP_HOST"])) {
 セッションスタート
 ********************/
 session_start();
+
 /***********
 DBコンフィグ
 ***********/
@@ -63,6 +64,19 @@ require_once(PATH.'classes/config/db.php');
 *******/
 require_once(PATH.'classes/model/db/basis.php');
 $model_db = new model_db();
+
+/**************
+モデルsignup
+**************/
+require_once(PATH.'classes/model/signup/basis.php');
+$model_signup_basis = new model_signup_basis();
+
+/****************************
+メールチェックライブラリ
+****************************/
+require_once(PATH.'classes/library/validateemail/basis.php');
+$library_validateemail_basis = new library_validateemail_basis();
+
 
 /****************************
 UXSEO_Search_Analytics
@@ -84,13 +98,19 @@ UXSEO_Search_Analytics
 /**********
 モデルlogin
 **********/
-//require_once(PATH.'classes/model/login/basis.php');
-//$model_login_basis = new model_login_basis();
+require_once(PATH.'classes/model/login/basis.php');
+$model_login_basis = new model_login_basis();
 /*************
 モデルsecurity
 *************/
 require_once(PATH.'classes/library/security/basis.php');
 $library_security_basis = new library_security_basis();
+/*****************
+モデルanalytics
+******************/
+require_once(PATH.'classes/model/analytics/basis.php');
+$model_analytics_basis = new model_analytics_basis();
+
 /*********
 モデルgzip
 *********/
@@ -109,4 +129,9 @@ $model_mail_basis = new model_mail_basis();
 *************/
 //require_once(PATH.'classes/library/security/basis.php');
 //$library_security_basis = new library_security_basis();
+
+
+
+
+
 

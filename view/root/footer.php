@@ -36,7 +36,7 @@
 					<!-- footer_box_bottom -->
 					<div class="footer_box_bottom">
 						<ul>
-							<li class="item"><a href="<?php echo HTTP; ?>aboutus/">企業情報</a></li>
+							<li class="item"><a href="https://spacenavi.jp/" target="_blank">運営会社</a></li>
 							<li class="item"><a href="<?php echo HTTP; ?>sitemap/">サイトマップ</a></li>
 						</ul>
 					</div> <!-- footer_box_bottom -->

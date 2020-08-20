@@ -8,7 +8,7 @@
 * 
 * 
 **/
-class Library_Validateemail_Basis {
+class library_validateemail_basis {
 	//--------------------------------------
 	//正しいメールアドレスかどうか調べる関数
 	//--------------------------------------
@@ -44,3 +44,7 @@ class Library_Validateemail_Basis {
 	    ;
 	}
 }
+
+
+
+

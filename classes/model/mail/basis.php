@@ -134,7 +134,6 @@ https://spacenavi.jp/');
 			// qbメール送信
 			Model_Mail_Basis::qbmail_send($post_array);
 	}
-
 	//-------------------------------------------
 	//プラン-お問い合わせのレポートメール送信
 	//-------------------------------------------
@@ -233,8 +232,6 @@ https://spacenavi.jp/');
 			// qbメール送信
 			Model_Mail_Basis::qbmail_send($post_array);
 	}
-
-
 	//--------------------------------
 	// SEOの相談レポートメール送信
 	//--------------------------------
@@ -285,6 +282,43 @@ https://spacenavi.jp/');
 			'from'    => 'info@uxseo.jp',
 			'to'      => $mail_array['email'],
 			'subject' => 'UXSEOへSEOの相談ありがとうございます',
+			'message' => $message,
+			'param'   => array(
+				'host'     => 'localhost',
+				'port'     => 25,
+				'from'     => 'info@uxseo.jp', 
+				'protocol' => 'SMTP',
+				'user'     => '',
+				'pass'     => '',),
+		);
+			// qbメール送信
+			Model_Mail_Basis::qbmail_send($post_array);
+	}
+	//-------------------------------------------------
+	//新規登録のメールアドレスへ仮登録メールを送る
+	//-------------------------------------------------
+	public static function user_signup_confirm_mail($mail_array, $hash) {
+		$message = ('
+UXSEOアナリティクスの仮登録ありがとうございます。
+
+以下のURLを30分以内にクリックすると、本登録が完了します。
+https://uxseo.jp/seo-tool/analytics/signup/confirm/?hash='.$hash.'
+
+※このURLをクリックしていただかないと、本登録が完了しません。必ずこのURLをクリックしてお進みください。
+
+-------
+
+UXSEO [1億PVから研究した2020年最新のSEO決定版サービス]
+https://uxseo.jp/
+
+[運営会社]
+スペースナビ株式会社
+https://spacenavi.jp/');
+ 
+		$post_array = array(
+			'from'    => 'info@uxseo.jp',
+			'to'      => $mail_array['email'],
+			'subject' => '[UXSEOアナリティクス]本登録のご案内',
 			'message' => $message,
 			'param'   => array(
 				'host'     => 'localhost',

@@ -1,0 +1,126 @@
+
+
+/*********
+analytics
+*********/
+.analytics {
+	width: 50%;
+	margin: 0 auto;
+}
+.analytics .analytics_inner {
+
+}
+.analytics .analytics_inner .section_block {
+
+}
+.analytics .analytics_inner .section_block .analytics_form {
+		position:relative;
+}
+.analytics .analytics_inner .section_block .analytics_form P {
+
+}
+.analytics .analytics_inner .section_block .analytics_form  input[type="text"] {
+	color: #3a3e40;
+	margin:0 0 30px 0;
+	padding: 18px;
+	width: 100%;
+	font-size: 18px;
+	box-sizing:border-box;
+	border-radius: 2px;
+	border: 1px solid #a5a5a5;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.analytics .analytics_inner .section_block .analytics_form input[type="submit"] {
+	cursor: pointer;
+	color: #fcfcfc;
+	background-color: #3C93FF;
+	margin:0 0 30px 0;
+	padding: 18px;
+	width: 100%;
+	font-size: 18px;
+	box-sizing:border-box;
+	border-radius: 2px;
+	border: 0px solid #a5a5a5;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+
+
+
+
+/******
+
+******/
+.table_block {
+	margin: 0 0 30px 0;
+}
+.table_block .hr {
+	position: relative;
+	display: flex;
+}
+.table_block .hr .w_30 {
+	width: 30%;
+}
+.table_block .hr .w_50 {
+	width: 50%;
+}
+.table_block .hr .w_70 {
+	width: 70%;
+}
+
+
+.table_block .hr .hd {
+	background-color: #4995FF;
+	color:#fcfcfc;
+	text-align: center;
+}
+.table_block .hr p {
+	border: 1px solid #dcdcdc;
+	width: 50%;
+	position: relative;
+	flex-direction: row-reverse;
+	align-items: flex-start;
+	margin: -1px -1px 0 0;
+	padding: 15px;
+}
+
+
+
+
+
+
+
+
+/**************
+1028px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 1028px) {
+
+}
+/**************
+640px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 640px) {
+	.analytics  {
+		width: 100%;
+	}
+	.analytics .analytics_inner {
+		margin: 30px 5px;
+	}
+
+}
+/**************
+480px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 480px) {
+
+
+}
+/**************
+320px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 320px) {
+
+}
