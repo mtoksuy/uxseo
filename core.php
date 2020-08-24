@@ -110,6 +110,8 @@ $library_security_basis = new library_security_basis();
 ******************/
 require_once(PATH.'classes/model/analytics/basis.php');
 $model_analytics_basis = new model_analytics_basis();
+require_once(PATH.'classes/model/analytics/html.php');
+$model_analytics_html = new model_analytics_html();
 
 /*********
 モデルgzip
