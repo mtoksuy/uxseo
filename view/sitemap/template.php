@@ -14,5 +14,6 @@
 			</div> <!-- main -->
 			<?php require_once(PATH.'view/basic/footer.php'); /* footer読み込み*/ ?>
 		</div> <!-- wrapper -->
+		<?php require_once(PATH.'view/basic/head_footer.php'); /* head_footer読み込み*/ ?>
 	</body>
 </html>

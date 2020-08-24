@@ -4,7 +4,7 @@ class model_db {
 	// DB接続
 	//-------
 	 public static function db_conect($db_config_array) {
-		$db = new mysqli($db_config_array['default']['connection']['localhost'],$db_config_array['default']['connection']['username'],$db_config_array['default']['connection']['password'], $db_config_array['default']['connection']['database']);
+		$db = new mysqli($db_config_array['default']['connection']['hostname'],$db_config_array['default']['connection']['username'],$db_config_array['default']['connection']['password'], $db_config_array['default']['connection']['database']);
 		if ($db->connect_error) {
 		    echo $db->connect_error;
 		    exit();

@@ -13,7 +13,7 @@
 						<a class="o_8" href="<?php echo HTTP;?>#plan">プラン一覧</a>
 					</li>
 					<li>
-						<a class="o_8" href="<?php echo HTTP;?>tool/">ツール</a>
+						<a class="o_8" href="<?php echo HTTP;?>seo-tool/">SEOツール</a>
 					</li>
 					<li>
 						<a class="o_8" href="<?php echo HTTP;?>article/">メディア</a>
@@ -23,7 +23,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</nav>
 
 
 
