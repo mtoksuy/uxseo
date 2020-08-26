@@ -48,6 +48,8 @@ for($a = 0; $a < 3650; $a++) {
 }
 */
 
+//pre_var_dump($_SESSION);
+//pre_var_dump($_COOKIE);
 
 	// アナリティクスチケット取得
 	$analytics_ticket_res = model_analytics_basis::analytics_ticket_get();
@@ -111,6 +113,7 @@ for($a = 0; $a < 3650; $a++) {
 		}
 } // if($_SESSION) {
 	else {
-		// あとでクッキーらへんでログイン記述
+		// クッキーログイン
+		model_login_basis::cookie_login();
 	}
 ?>

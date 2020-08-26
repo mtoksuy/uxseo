@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
 	<url>
 		<loc>https://uxseo.jp/</loc>
 		<changefreq>weekly</changefreq>
@@ -12,6 +13,11 @@
 	</url>
 	<url>
 		<loc>https://uxseo.jp/contact/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://uxseo.jp/consultation/</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -36,13 +42,24 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://uxseo.jp/consultation/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
 		<loc>https://uxseo.jp/sitemap/</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.5</priority>
 	</url>
+	<url>
+		<loc>https://uxseo.jp/seo-tool/analytics/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://uxseo.jp/seo-tool/analytics/signup/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://uxseo.jp/seo-tool/analytics/login/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+
 </urlset>

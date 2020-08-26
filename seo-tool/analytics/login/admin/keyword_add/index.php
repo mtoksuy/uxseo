@@ -20,6 +20,7 @@ require_once('../../../../../core.php');
 			}
 	}
 		else {
-			// あとでクッキーらへんでログイン記述
+			// クッキーログイン
+			model_login_basis::cookie_login();
 		}
 ?>

@@ -8,11 +8,7 @@ require_once('../../../core.php');
 		model_login_basis::login($post);
 	}
 
-
-
 	// テンプレート読み込み
 	require_once(PATH.'view/seo-tool/analytics/login/template.php');
-
-
 
 ?>

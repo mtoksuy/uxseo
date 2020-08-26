@@ -100,6 +100,11 @@ UXSEO_Search_Analytics
 **********/
 require_once(PATH.'classes/model/login/basis.php');
 $model_login_basis = new model_login_basis();
+/**************
+モデルlogout
+**************/
+require_once(PATH.'classes/model/logout/basis.php');
+$model_logout_basis = new model_logout_basis();
 /*************
 モデルsecurity
 *************/

@@ -3,6 +3,21 @@
 /*********
 seo-tool
 *********/
+.seo_tool {
+	width: 50%;
+	margin: 0 auto;
+}
+.seo_tool .seo_tool_inner {
+	margin: 30px 0 0 0;
+}
+.seo_tool .seo_tool_inner .seo_tool_inner_title_top {
+	margin: 0px 0 15px 0;
+}
+
+.seo_tool .seo_tool_inner .section_block {
+
+}
+
 
 
 

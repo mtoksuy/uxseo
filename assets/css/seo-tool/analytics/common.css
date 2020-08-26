@@ -1,5 +1,16 @@
 
 
+/*******
+
+*******/
+.header .header_inner a {
+	color: #292f33;
+}
+.header .header_inner a:visited {
+	color: #292f33;
+}
+
+
 /*********
 analytics
 *********/

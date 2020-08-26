@@ -17,6 +17,7 @@ require_once('../../../../../core.php');
 		require_once(PATH.'view/seo-tool/analytics/login/admin/settings/template.php');
 	}
 		else {
-			// あとでクッキーらへんでログイン記述
+			// クッキーログイン
+			model_login_basis::cookie_login();
 		}
 ?>

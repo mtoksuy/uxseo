@@ -20,7 +20,7 @@ class model_login_basis  {
 
 				// クッキー生成(一ヶ月有効)
 				setcookie('uxseo_id', $value["uxseo_id"], time() + 2592000, '/');
-				setcookie('uxseo_login_key', $post['user_password'], time() + 2592000, '/');
+				setcookie('uxseo_login_key', $value['password'], time() + 2592000, '/');
 				model_login_basis::login_history_record($_SESSION["uxseo_id"]);
 				// 移動
 				header('Location: '.HTTP.'seo-tool/analytics/login/admin/');
@@ -39,38 +39,29 @@ class model_login_basis  {
 	//クッキーログイン
 	//----------------
 	public static function cookie_login() {
-		$login_check = false;
-		$query = DB::query("
+		$query = model_db::query("
 			SELECT *
 			FROM user
-			WHERE	judge_id     = '".$_COOKIE['judge_id']."'
-			AND   password         = '".$_COOKIE['judge_login_key']."'
-
-			OR    email            = '".$_COOKIE['judge_id']."'
-			AND   password         = '".$_COOKIE['judge_login_key']."'")->execute();
-
+			WHERE uxseo_id  = '".$_COOKIE["uxseo_id"]."'");
 		foreach($query as $key => $value) {
-			// セッション生成
-			$_SESSION["primary_id"]          = $value["primary_id"];
-			$_SESSION["judge_id"]        = $value["judge_id"];
-			$_SESSION["email"]               = $value["email"];
-			$_SESSION["name"]                = $value["name"];
-			$_SESSION["management_site_url"] = $value["management_site_url"];
-			$_SESSION["profile_contents"]    = $value["profile_contents"];
-			$_SESSION["profile_icon"]        = $value["profile_icon"];
-			$_SESSION["twitter_id"]          = $value["twitter_id"];
-			$_SESSION["facebook_id"]         = $value["facebook_id"];
-			$_SESSION["all_page_view"]       = $value["all_page_view"];
-			$_SESSION["creation_time"]       = $value["creation_time"];
-			$_SESSION["update_time"]         = $value["update_time"];
-			// クッキー生成(一ヶ月有効)
-			setcookie('judge_id', $value["judge_id"], time() + 2592000, '/');
-			setcookie('judge_login_key', $_COOKIE['judge_login_key'], time() + 2592000, '/');
-			// ユーザーがログインしたらお知らせのメールを送信する
-			Model_Mail_Basis::login_account_report_mail($_SESSION);
-			$login_check = true;
+			if($_COOKIE['uxseo_login_key'] ===  $value['password']) {
+
+
+				// セッション生成
+				$_SESSION["primary_id"]    = $value["primary_id"];
+				$_SESSION["uxseo_id"]       = $value["uxseo_id"];
+				$_SESSION["email"]            = $value["email"];
+				$_SESSION["create_time"]  = $value["create_time"];
+				$_SESSION["update_time"] = $value["update_time"];
+				// クッキー生成(一ヶ月有効)
+				setcookie('uxseo_id', $value["uxseo_id"], time() + 2592000, '/');
+				setcookie('uxseo_login_key', $value['password'], time() + 2592000, '/');
+				model_login_basis::login_history_record($_SESSION["uxseo_id"]);
+				// 移動
+				header('Location: ');
+				exit;	
+			}
 		}
-			return $login_check;
 	}
 	//----------------
 	//ログインチェック
