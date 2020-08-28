@@ -11,8 +11,12 @@
 					<!-- section_block -->
 					<div class="section_block">
 						<p>正常に登録されました。</p>
-						<p>1日に1度トラッキングします。ホームにて確認できます</p>
-						<a class="o_8" href="<?php echo HTTP;?>seo-tool/analytics/login/admin/keyword_add/">追加で登録する</a>
+						<p>1日に1度トラッキングします。</p>
+						<p>これからロボットが回遊いたしますので最短で5分、最長で2時間程度で本日はトラッキングいたします。サマリーにて確認できます。</p>
+
+
+
+						<a class="o_8" href="<?php echo HTTP;?>seo-tool/analytics/login/admin/keyword_add/">追加でキーワード登録する</a>
 					</div> <!-- section_block -->
 				</div> <!-- analytics_inner -->
 			</div> <!-- analytics -->	

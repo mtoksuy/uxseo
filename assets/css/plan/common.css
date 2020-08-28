@@ -261,12 +261,12 @@ plan
 	z-index: 7;
 }
 .progress_tracker .progress_tracker_inner .progress_tracker_point_end:before {
-	position: relative;
+	position: absolute;
 	border-radius: 50px;
-	width: 34px;
-	height: 34px;
+	width: 16px;
+	height: 16px;
 	content:'　';
-	top: -2px;
+	top: 4px;
 	left: 4px;
 	background-color: #fff;
 }
