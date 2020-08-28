@@ -10,7 +10,7 @@
 									<p class="confirm_content"><?php echo $_POST['contact_content']; ?></p>
 								</div>
 								<div class="confirm_block">
-									<p class="confirm_title">御社名</p>
+									<p class="confirm_title">貴社名</p>
 									<p class="confirm_content"><?php echo $_POST['company_name']; ?></p>
 								</div>
 								<div class="confirm_block">
