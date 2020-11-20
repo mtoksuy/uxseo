@@ -50,11 +50,13 @@ class model_gzip_basis {
 				else {
 					$css = file_get_contents($http.$value_array[2]);
 				}
+			$css = preg_replace('/
+|	/', '', $css);
 			$search = $gzip_article_html_array[0][$key];
 			$replace = '<style>'.$css.'</style>';
 			$search = preg_replace('/\?/', '\?', $search);
 			$gzip_article_html = preg_replace('#'.$search.'#', $replace, $gzip_article_html);
-			} // foreach($gzip_article_html_array[0] as $key => $value) {
+		} // foreach($gzip_article_html_array[0] as $key => $value) {
 		return $gzip_article_html;
 	}
 	/*
@@ -135,6 +137,7 @@ class model_gzip_basis {
 		file_put_contents($directory_path.'index.html', $gzip_article_html);
 		$file_org =  'index.html';
 		$file_gzip = 'index.html.gz';
+
 		// 元ファイルの内容を読み込む
 		$code = file_get_contents($directory_path.$file_org);
 		// gzip圧縮処理して同一フォルダにファイルを作成

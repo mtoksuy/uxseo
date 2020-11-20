@@ -22,7 +22,7 @@
 									<div class="problem_solving_li_inner">
 										<img src="<?php echo HTTP;?>assets/svg/plugin/galaxy/space.svg" width="64" height="64">
 										<h4>見た目は変わらず順位は上昇</h4>
-										<p>Googelとユーザーが求める品質以上にウェブサイトのUXを最高品質まで仕上げ検索順位を上げます。</p>
+										<p>Googleとユーザーが求める品質以上にウェブサイトのUXを最高品質まで仕上げ検索順位を上げます。</p>
 									</div>
 								</li>
 								<li>
@@ -280,7 +280,7 @@
 												<div class="left">JS最適化</div><div class="right red">×</div>
 											</div>
 											<div class="plan_box_item">
-												<div class="left">画像配信(CDN)</div><div class="right red">×</div>
+												<div class="left">画像配信(CDN)</div><div class="right green">○</div>
 											</div>
 											<div class="plan_box_item">
 												<div class="left">対応サイト数</div><div class="right green">1</div>
@@ -354,7 +354,7 @@
 					<div class="contact_prompt">
 						<div class="contact_prompt_inner clearfix">
 							<div class="contact_prompt_inner_left">
-								<p class="">UXSEOでビジネスをブーストしませんか？<span>気になる点はお気軽にお問い合わせください。<span></p>
+								<p class="">UXSEOでビジネスをブーストしませんか？<span>気になる点はお気軽にお問い合わせください。</span></p>
 								<p></p>
 							</div>
 							<div class="contact_prompt_inner_right">
@@ -368,6 +368,36 @@
 							</div>
 						</div>
 					</div> <!-- contact_prompt -->
+
+
+
+
+
+					<!-- section_block -->
+					<div id="media" class="section_block">
+						<p class="section_title_top">Media</p>
+						<h2 class="section_title">最新記事</h2>
+						<p class="section_title_bottom">UXSEOが運営するメディアです</p>
+						<p class="section_title_bottom m_b_100">最新のSEO情報をお届け致します</p>
+						<div class="media">
+							<div class="media_inner">	
+								<div class="card_article">
+									<div class="card_article_inner">
+										<?php echo $article_list_html; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> <!-- section_block -->
+
+
+
+
+
+
+
+
+
 
 
 

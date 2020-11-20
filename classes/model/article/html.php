@@ -1,62 +1,56 @@
 <?php
 class model_article_html {
-	//----------------------
-	//注目まとめ一覧HTML生成
-	//----------------------
-	public static function recommend_article_list_html_create($recommend_article_array, $article_type = 'article', $function_type = '注目') {
+	//------------------
+	//リストHTML生成
+	//------------------
+	public static function article_list_html_create($recommend_article_array) {
 		foreach($recommend_article_array as $key => $value) {
 			// 記事データ取得
-			$article_author       = $value["judge_id"];
 			$unix_time            = strtotime($value["create_time"]);
 			$local_time           = date('Y-m-d', $unix_time);
 			$local_japanese_time  = date('Y年m月d日', $unix_time);
 			$article_year_time    = date('Y', $unix_time);
+//pre_var_dump($value);
 
-			// judgeのユーザーデータ取得
-			$judge_user_data_array = model_info_basis::judge_user_data_get($article_author);
+
+			// 記事HTMLテキスト取得
+			$article_contents     = htmlspecialchars_decode($value["content"]);
 			// 改行を消す&タブ削除
-			$article_contests = str_replace(array("\r\n", "\r", "\n", "\t"), '', $value["sub_text"].$value["text"]);
-			// 出典元タグを取り除く
-			$article_contests = preg_replace('/<div class="image_quote">.+?<\/div>/', '', $article_contests);
+			$article_contests = str_replace(array("\r\n", "\r", "\n", "\t"), '', $article_contents);
 			// 本文を5680文字に丸める
-			$article_contests = mb_strimwidth($article_contests, 0, 5680, "...", 'utf8'); // 応急処置 2018.01.31 なぜこれで直るかはわからん 下記のpreg_replaceが重すぎた
+			$article_contests = mb_strimwidth($article_contests, 0, 5680, '...', 'utf8'); // 応急処置 2018.01.31 なぜこれで直るかはわからん 下記のpreg_replaceが重すぎた
+
 			// HTMLタグを取り除く
-			$article_contests = preg_replace('/<("[^"]*"|\'[^\']*\'|[^\'">])*>/', '', $article_contests);
-			// 追加を取り除く
-			$article_contests = preg_replace('/追加/', '', $article_contests);
+//			$article_contests = preg_replace('/<("[^"]*"|\'[^\']*\'|[^\'">])*>/', '', $article_contests);
+			$article_contests = strip_tags($article_contests);
+
 			// 本文を168文字に丸める
 			$summary_contents = mb_strimwidth($article_contests, 0, 168, "...", 'utf8');
+
 			// エンティティを戻す
 			$title        = htmlspecialchars_decode($value["title"], ENT_NOQUOTES);
 			// タイトルを82文字に丸める
 			$title = mb_strimwidth($title, 0, 82, "...", 'utf8');
-			 $recommend_article_li .=
-			 '<li class="o_8">
-				<article>
-					<a href="'.HTTP.'article/'.$value['link'].'/" class="clearfix">
-						<div class="card_article_data clearfix">
-							<h1>'.$title.'</h1>
-							<div class="card_article_data_summary">'.$summary_contents.'</div>
-							<div class="card_article_data_author">'.$judge_user_data_array['name'].'さん</div>
-							<div class="card_article_data_time">'.$local_time.'</div>
-						</div>
-					</a>
-				</article>
-			</li>';
+
+			 $article_list_li .=
+				 '<li>
+					<article>
+						<a href="'.HTTP.'media/article/'.$value['primary_id'].'/" class="o_8">
+							<div class="card_article_contents">
+								<h1>'.$title.'</h1>
+								<div class="card_article_contents_summary">'.$summary_contents.'</div>
+								<div class="card_article_contents_time">'.$local_japanese_time.'</div>
+							</div>
+						</a>
+					</article>
+				</li>';
 		}
 		// 合体
-		$recommend_article_html = 
-			'<div class="card_article">
-				<div class="card_article_inner">
-					<div class="card_article_header">
-						<span class="typcn typcn-document-text"></span><span>'.$function_type.'</span>
-					</div>
-					<ul>
-						'.$recommend_article_li.'
-					</ul>
-				</div>
-			</div>';
-		return $recommend_article_html;
+		$article_list_html = 
+		'<ul>
+			'.$article_list_li.'
+		</ul>';
+		return $article_list_html;
 	}
 	//------------------------------
 	//注目まとめのページングHTML生成
@@ -128,10 +122,10 @@ if($right_check) {
 		</div>';
 		return $paging_html;
 	}
-	//--------------
+	//------------------
 	//記事のHTML生成
-	//--------------
-	static function article_html_create($article_res, $article_type = 'article', $preview_frg = false) {
+	//-------------------
+	static function article_html_create($article_res) {
 //pre_var_dump($article_res);
 //		var_dump($preview_frg);
 		// 変数
@@ -139,11 +133,9 @@ if($right_check) {
 		// 記事HTML生成
 		foreach($article_res as $key => $value) {
 			// 記事のprimary_id取得
-			$article_primary_id   = $value["primary_id"];
+			$article_primary_id   = (int)$value["primary_id"];
 			// 記事作成者取得
-			$article_author       = $value["judge_id"];
-			// 記事作成者データ取得
-			$judge_user_data_array = Model_Info_Basis::judge_user_data_get($value["judge_id"]);
+			$article_author       = $value["uxseo_id"];
 
 			// 記事作成時間取得
 			$creation_time        = $value["create_time"];
@@ -151,6 +143,8 @@ if($right_check) {
 			$year_time            = date('Y', $unix_time);
 			$local_time           = date('Y-m-d', $unix_time);
 			$local_japanese_time  = date('Y年m月d日', $unix_time);
+//var_dump($local_japanese_time);
+
 			$article_year_time    = date('Y', $unix_time);
 			// 記事更新時間取得
 			$update_time                 = $value["update_time"];
@@ -160,44 +154,34 @@ if($right_check) {
 			// 記事タイトル取得 // エンティティを戻す
 			$article_title        = htmlspecialchars_decode($value["title"], ENT_NOQUOTES); // ダブルクォート、シングルクォートの両方をそのままにします。
 			// 記事HTMLテキスト取得
-			$article_contents     = $value["sub_text"].$value["text"];
-			// リンク取得
-			$article_link         = $value["link"];
+			$article_contents     = htmlspecialchars_decode($value["content"]);
+
 
 			// 投稿日・更新日HTML生成
-			$posted_date_time_html = Model_Article_Html::posted_date_time_html_create($local_time, $local_japanese_time);
+			$posted_date_time_html = model_article_html::posted_date_time_html_create($local_time, $local_japanese_time);
 			$update_date_time_html = Model_Article_Html::update_date_time_html_create($unix_time, $update_unix_time, $update_local_japanese_time);
-			// 前のまとめ、次のまとめTML生成
-			$detail_press_bottom_html = Model_Article_Html::article_previous_next_html_create($article_primary_id, $article_type);
 
-			// まとめ記事の場合(重要)
-			if($value["matome_frg"] == 1) {
-				// まとめコンテンツリストHTML取得
-				$value["sub_text"] = Model_Article_Html::matome_content_block_list_html_get($value["sub_text"]);
-			}
-			// 記事HTML生成
+			// 前の記事、次の記事データ取得
+			$article_previous_next_res_array = model_article_basis::article_previous_next_get($article_primary_id);
+			$detail_article_bottom_html = model_article_html::article_previous_next_html_create($article_primary_id);
+
+			// 記事HTML
 			$article_html = ('
-				<article class="article" data-article_number="'.$value["primary_id"].'" data-article_year="'.$year_time.'">
-					<div class="article_inner">
-						<div class="article_data_header">
-							<h1>'.$value["title"].'</h1>
-						</div>
-						<div class="article_contents">
-							'.$value["sub_text"].'
-						</div>
+				<article>
+					<h1>'.$article_title.'</h1>
+					<div class="article_data">
+						'.$posted_date_time_html.'
 					</div>
-					<!-- 前後のまとめ -->
-					'.$detail_press_bottom_html.'
-				</article>
-			');
+					'.$article_contents.'
+					'.$detail_article_bottom_html.'
+				</article>');
+
 			// article_data_array
 			$article_data_array = array(
 				'article_primary_id'      => (int)$article_primary_id,
 				'article_html'            => $article_html, 
 				'article_title'           => $article_title, 
-				'article_value'           => $article_value, 
 				'article_contents'        => $article_contents,
-				'article_link'            => $article_link, 
 				'article_year_time'       => $article_year_time, 
 			);
 		}
@@ -209,7 +193,7 @@ if($right_check) {
 	public static function posted_date_time_html_create($local_time, $local_japanese_time) {
 		$posted_date_time_html= 
 			'<div class="posted_date_time">
-				<span class="typcn typcn-watch"></span><span>Posted date：</span><time datetime="'.$local_time.'" pubdate="pubdate">'.$local_japanese_time.'</time>
+				<span>Posted date：</span><time datetime="'.$local_time.'" pubdate="pubdate">'.$local_japanese_time.'</time>
 			</div>';
 		return $posted_date_time_html;
 	}
@@ -228,26 +212,22 @@ if($right_check) {
 			}
 		return $update_date_time_html;
 	}
-	//------------------------------
-	//前のまとめ、次のまとめHTML生成
-	//------------------------------
-	static function article_previous_next_html_create($article_primary_id , $article_type) {
+	//--------------------------------
+	//前の記事、次の記事HTML生成
+	//--------------------------------
+	static function article_previous_next_html_create($article_primary_id) {
 		// 変数
 		$preview_html = '';
 		$next_html    = '';
 		// 前の記事、次の記事データ取得
-		$article_previous_next_res_array = Model_Article_Basis::article_previous_next_get($article_primary_id , $article_type);
+		$article_previous_next_res_array = Model_Article_Basis::article_previous_next_get($article_primary_id);
 		// 前の記事HTML生成
 		foreach($article_previous_next_res_array["previous"] as $key => $value) {
-			$preview_html = ('<div class="previous"><a href="'.HTTP.''.$article_type.'/'.$value["link"].'/">
-				<span class="typcn typcn-arrow-left"></span>
-'.mb_strimwidth($value["title"], 0,124, '...').'</a></div>');
+			$preview_html = ('<div class="previous"><span>前の記事</span><a href="'.HTTP.'media/article/'.$value["primary_id"].'/">'.mb_strimwidth($value["title"], 0,124, '...').'</a></div>');
 		}
 		// 次の記事HTML生成
 		foreach($article_previous_next_res_array["next"] as $key => $value) {
-			$next_html = ('<div class="next"><a href="'.HTTP.''.$article_type.'/'.$value["link"].'/">'.mb_strimwidth($value["title"], 0, 124, '...').'
-<span class="typcn typcn-arrow-right"></span>
-</a></div>');
+			$next_html = ('<div class="next"><a href="'.HTTP.'media/article/'.$value["primary_id"].'/">'.mb_strimwidth($value["title"], 0, 124, '...').'</a><span>次の記事</span></div>');
 		}
 		// 関連記事、前の記事、次の記事HTML生成
 		$detail_article_bottom_html = 

@@ -7,6 +7,17 @@ class model_analytics_basis  {
 		if(!$post['analytics_ticket_primary_id']) { $post['analytics_ticket_primary_id'] = 'false'; }
 		if($_SESSION) { $post['uxseo_id'] = $_SESSION['uxseo_id']; }
 		if(!$_SESSION) { $post['uxseo_id'] = 'false'; }
+/*
+var_dump(
+'http://133.130.116.136/?url='.preg_replace('/\//', 'すらっしゅ', $post['url']).
+			'&keyword_1='.preg_replace('/ /', 'げろげろ空白', $post['keyword_1']).
+			'&keyword_2='.preg_replace('/ /', 'げろげろ空白', $post['keyword_2']).
+			'&keyword_3='.preg_replace('/ /', 'げろげろ空白', $post['keyword_3']).
+			'&analytics_ticket_primary_id='.$post['analytics_ticket_primary_id'].
+			'&uxseo_id='.$post['uxseo_id'].
+		''
+);
+*/
 		$json = file_get_contents('http://133.130.116.136/?url='.preg_replace('/\//', 'すらっしゅ', $post['url']).
 			'&keyword_1='.preg_replace('/ /', 'げろげろ空白', $post['keyword_1']).
 			'&keyword_2='.preg_replace('/ /', 'げろげろ空白', $post['keyword_2']).
@@ -176,10 +187,11 @@ $analytics_graph_data.= "
 	            borderColor: [
 					".$borderColor."
 	            ],
-	            borderWidth: 3,
-				tension: 0.3,
-				pointRadius: 0,
-				pointStyle: 'circle',
+	            borderWidth: 3, // 線の大きさ
+				tension: 0.3, // テンション
+				pointRadius: 0, // ポイント
+//				pointStyle: 'circle',
+//				fill: false,
 	        },";
 // 初期化
 $query = array();
@@ -224,6 +236,69 @@ data: {
 				SET del = 1 
 				WHERE uxseo_id = '".$_SESSION['uxseo_id']."'
 				AND turn_id = ".$turn_id."");
+	}
+	//----------------------------------------------------
+	// 直近順位〜直近1年平均順位のレポートデータ取得
+	//----------------------------------------------------
+	public static function analytics_latest_various_data_get($ticket_turn_id, $default_date) {
+		$now_time =time();
+		$default_time = $now_time-((60*60)*24)*365;
+		$default_date = date('Y-m-d H:i:s', $default_time); // 表示期間
+
+		$analytics_ticket_res = model_db::query("
+			SELECT *
+			FROM analytics_ticket
+				WHERE uxseo_id	 = '".$_SESSION['uxseo_id']."'
+				AND turn_id = ".(int)$ticket_turn_id."
+				AND del = 0
+				ORDER BY turn_id DESC
+			");
+		foreach(json_decode($analytics_ticket_res[0]['keyword_json']) as $key => $value) {
+			$analytics_res = model_db::query("
+				SELECT *
+				FROM googler_query
+					WHERE uxseo_id	                    = '".$_SESSION['uxseo_id']."'
+					AND analytics_ticket_primary_id	= ".(int)$analytics_ticket_res[0]['primary_id']."
+					AND query = '".$value."'
+					AND create_time > '".$default_date."'
+					ORDER BY primary_id DESC
+				");
+			foreach($analytics_res as $key_1 => $value_1) {
+				$value_1['rank'] = (int)preg_replace('/位/', '', $value_1['rank']);
+				$analytics_latest_various_data_test_array[$key_1] = $value_1;
+			}
+			$analytics_latest_various_data_array[$key] = $analytics_latest_various_data_test_array;
+			$analytics_latest_various_data_test_array = array();
+		}
+		$keyword_json_array = json_decode($analytics_ticket_res[0]['keyword_json']);
+		$analytics_latest_various_data_array;
+		foreach($analytics_latest_various_data_array as $key_2 => $value_2) {
+			foreach($value_2 as $key_3 => $value_3) {
+				$rank_data_array[$key_2][] = $value_3['rank'];
+			}
+		}
+
+			foreach($rank_data_array as $key_4 => $value_4) {
+				$total = array_sum($value_4);
+				$average = (int)round($total/count($value_4), 2);
+				$average_array[$key_4] = $average;
+			}
+
+
+$speed=[100, 0, 70, 30, 8477];
+$total = array_sum($speed);
+$average = (int)round($total/count($speed),2);
+//pre_var_dump($average_array);
+
+/*
+						<p>最新順位</p>
+						<p>直近1週間平均順位</p>
+						<p>直近1ヶ月平均順位</p>
+						<p>直近3ヶ月平均順位</p>
+						<p>直近半年平均順位</p>
+						<p>直近1年平均順位</p>
+
+*/
 	}
 
 

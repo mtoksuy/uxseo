@@ -41,30 +41,30 @@ class model_article_basis {
 	//--------------
 	//記事データ取得
 	//--------------
-	public static function article_get($article_type, $method, $cron_check = false) {
+	public static function article_get($method) {
 		$article_res = model_db::query("
 			SELECT * 
-			FROM ".$article_type." 
-			WHERE del = 0
-			AND link = '".$method."'
+			FROM article 
+			WHERE primary_id = ".$method."
+			AND del = 0
 			LIMIT 0, 1");
 		return $article_res;
 	}
 	//----------------------------
 	//前の記事、次の記事データ取得
 	//----------------------------
-	public static function article_previous_next_get($article_primary_id , $article_type) {
+	public static function article_previous_next_get($article_primary_id) {
 		$query_p = model_db::query("SELECT * 
-									FROM ".$article_type."
+									FROM article
 									WHERE primary_id < $article_primary_id
 									AND del = 0
-									ORDER BY ".$article_type.".primary_id DESC
+									ORDER BY primary_id DESC
 									LIMIT 0 , 1");
 		$query_n = model_db::query("SELECT * 
-									FROM ".$article_type."
+									FROM article
 									WHERE primary_id > $article_primary_id
 									AND del = 0
-									ORDER BY ".$article_type.".primary_id ASC
+									ORDER BY primary_id ASC
 									LIMIT 0 , 1");
 		$article_previous_next_res_array = array(
 		 'previous' => $query_p,

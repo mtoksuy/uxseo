@@ -9,13 +9,90 @@ drawer
 
 
 
+/******
+media
+******/
+.media {
+
+}
+.media .media_inner {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.media .media_inner .card_article {
+	font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
+	font-weight: 300;
+}
+
+.media .media_inner .card_article .card_article_inner {
+
+}
+.media .media_inner .card_article .card_article_inner ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+.media .media_inner .card_article .card_article_inner ul li {
+	width: 50%;
+}
+.media .media_inner .card_article .card_article_inner ul li article {
+
+}
+.media .media_inner .card_article .card_article_inner ul li article a {
+	display: block;
+	color: #292f33;
+	padding: 25px;
+}
+.media .media_inner .card_article .card_article_inner ul li article a:hover {
+	background-color:#f0f0f0;
+}
+.media .media_inner .card_article .card_article_inner ul li article a::link {
+	color: #292f33;
+}
+.media .media_inner .card_article .card_article_inner ul li article a::visited {
+	color: #292f33;
+}
+
+.media .media_inner .card_article .card_article_inner ul li article a .card_article_contents {
+
+}
+.media .media_inner .card_article .card_article_inner ul li article a .card_article_contents h1 {
+
+}
+.media .media_inner .card_article .card_article_inner ul li article a .card_article_contents .card_article_contents_summary {
+
+}
+.media .media_inner .card_article .card_article_inner ul li article a .card_article_contents .card_article_contents_time {
+
+}
+
+
+
+
+/**************
+880px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 880px) {
+	.media .media_inner .card_article .card_article_inner ul li {
+		width: 50%;
+	}
+	.media .media_inner .card_article .card_article_inner ul li article a {
+		padding: 15px;
+	}
 }
 /**************
 480px以下の設定
 **************/
 @media screen and (min-width: 0px) and (max-width: 480px) {
-
-
+	.media .media_inner .card_article .card_article_inner ul li {
+		width: 100%;
+	}
+	.media .media_inner .card_article .card_article_inner ul li article a {
+		padding: 5px;
+	}
 }
 /**************
 320px以下の設定
@@ -23,6 +100,4 @@ drawer
 @media screen and (min-width: 0px) and (max-width: 320px) {
 
 }
-
-
 

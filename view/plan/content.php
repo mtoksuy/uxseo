@@ -119,6 +119,7 @@ switch($_GET['p']) {
 		<div class="progress_tracker_point_end"> </div>
 		<div class="progress_tracker_label">プランを選ぶ(<?php echo $select; ?>)</div>
 		<div class="progress_tracker_label_current">情報送信</div>
+	</div>
 </div>
 
 <div class="plan">

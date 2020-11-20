@@ -1,0 +1,189 @@
+/******
+media
+******/
+.media {
+
+}
+.media .media_inner {
+
+}
+/*******
+article
+*******/
+article {
+	width: 620px;
+	margin: 0 auto;
+	font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
+	font-weight: 300;
+	word-wrap: break-word;
+/*
+	letter-spacing: 0.3px;
+*/
+}
+article h1 {
+	font-size: 34px;
+	margin: 0 0 30px 0;
+	font-weight: 500;
+}
+article h2 {
+	font-size: 28px;
+	margin: 45px 0 30px 0;
+}
+article h3 {
+	font-size: 22px;
+	margin: 30px 0 15px 0;
+}
+article h4 {
+	font-size: 20px;
+	margin: 30px 0 15px 0;
+
+}
+article img {
+	width: 100%;
+	height: auto;
+	background-color: #FcFcFc;
+	border: 1px solid #ededed;
+	border-radius: 2px;
+	box-sizing: border-box;
+	padding: 5px;
+	margin: 0 0 15px 0;
+}
+article strong {
+	color: #f24763;
+}
+article .article_data {
+	margin: 0 0 30px 0;
+}
+article .posted_date_time {
+
+}
+article .update_date_time{
+
+}
+article p {
+	font-size: 18px;
+	line-height: 36px;
+}
+article ul.number {
+	list-style-type: decimal;
+}
+
+pre.code {
+	color: #e1e1e1;
+	padding: 15px;
+	background-color: rgb(52, 53, 49);
+}
+
+
+
+
+
+
+
+
+table {
+display: block;
+overflow: auto;
+margin: 1.5em 0;
+border-left: 1px solid #ddd;
+border-collapse: collapse;
+}
+
+th {
+font-weight: bold;
+background-color: #fff;
+border-top: 1px solid #ddd;
+border-bottom: 1px solid #ccc;
+border-right: 1px solid #ccc;
+padding: 8px 10px;
+}
+tr:nth-child(odd) {
+background-color: #eee;
+}
+td {
+border-bottom: 1px solid #ccc;
+border-right: 1px solid #ccc;
+padding: 8px 10px;
+max-width: 600px;
+}
+
+
+
+
+
+
+
+
+
+/***********
+前後の記事
+**********/
+.previous_next {
+	margin: 60px 0 0 0;
+	border-top: solid 1px #808080;
+	padding: 30px 0 0 0;
+	display:flex;
+	position: relative;
+}
+.previous_next .next {
+	width: 50%;
+}
+.previous_next .next span {
+	margin: 0 5px 0 0;
+}
+.previous_next .previous {
+	width: 50%;
+}
+.previous_next .previous span {
+	margin: 0 0 0 5px;
+}
+
+
+
+
+
+
+
+
+
+
+/**************
+1024px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+	/******
+	media
+	******/
+	.media .media_inner {
+		margin: 30px 0 0 0;
+	}
+	/*********
+	article
+	*********/
+	article {
+		width: auto;
+		margin: 0 10px;
+	}
+	article h1 {
+		margin: 0 10px 30px 10px;
+	}
+}
+/**************
+640px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 640px) {
+
+}
+/**************
+480px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 480px) {
+
+
+}
+/**************
+320px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 320px) {
+
+}

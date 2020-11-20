@@ -7,6 +7,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://uxseo.jp/media/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://uxseo.jp/seo-tool/</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.5</priority>
@@ -37,14 +42,44 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://uxseo.jp/sitemap/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://uxseo.jp/plan/?p=4</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://uxseo.jp/sitemap/</loc>
+		<loc>https://uxseo.jp/media/article/1/</loc>
 		<changefreq>weekly</changefreq>
-		<priority>0.5</priority>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://uxseo.jp/media/article/2/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://uxseo.jp/media/article/3/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://uxseo.jp/media/article/4/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://uxseo.jp/media/article/5/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://uxseo.jp/media/article/6/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
 	</url>
 	<url>
 		<loc>https://uxseo.jp/seo-tool/analytics/</loc>
@@ -54,12 +89,12 @@
 	<url>
 		<loc>https://uxseo.jp/seo-tool/analytics/signup/</loc>
 		<changefreq>weekly</changefreq>
-		<priority>0.5</priority>
+		<priority>0.2</priority>
 	</url>
 	<url>
 		<loc>https://uxseo.jp/seo-tool/analytics/login/</loc>
 		<changefreq>weekly</changefreq>
-		<priority>0.8</priority>
+		<priority>0.2</priority>
 	</url>
 
 </urlset>

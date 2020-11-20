@@ -1,3 +1,4 @@
+
 	<head>
 	  <title>UXSEOアナリティクス - SEO検索順位チェックツール</title>
 	  <!-- meta -->
@@ -19,8 +20,5 @@
 	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/core.css" type="text/css">
 	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/common/common.css" type="text/css">
 	  <link rel="stylesheet" href="<?php echo HTTP;?>assets/css/seo-tool/analytics/common.css" type="text/css">
+		<?php require_once(PATH.'view/basic/google_analytics.php'); /* google_analytics読み込み*/ ?>
 	</head>
-
-
-
-

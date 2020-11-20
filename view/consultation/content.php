@@ -6,6 +6,7 @@
 		<div class="progress_tracker_point_end"> </div>
 		<div class="progress_tracker_label">SEOの相談をする</div>
 		<div class="progress_tracker_label_current">Slackで進める</div>
+	</div>
 </div>
 
 <div class="plan">

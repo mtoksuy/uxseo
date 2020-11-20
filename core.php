@@ -29,10 +29,10 @@ function pre_var_dump($data = '') {
 // ローカル環境
 if(preg_match('/localhost/',$_SERVER["HTTP_HOST"])) {
 	// デフォルト変数生成
-	define('HTTP', 'http://localhost/UXSEO/');
+	define('HTTP', 'http://localhost/uxseo/');
 	define('PATH', dirname(__FILE__).'/');
 	define('INTERNAL_PATH', dirname(__FILE__).'/');
-	define('TITLE', 'UXSEO [1億PVから研究した2020年最新のSEO決定版サービス]');
+	define('TITLE', 'UXSEO [3億PVから研究した2020年最新のSEO決定版サービス]');
 	define('META_KEYWORDS', 'UXSEO, SEO, SEOチェック, SEOツール, SEOキーワード, 格安');
 	define('META_DESCRIPTION', '日本トップSEO会社。様々なウェブサイトを魔法のように検索順位を上げます。SEOツール、SEOキーワード、SEOチェックも豊富に取り揃えています。');
 	define('TWITTER_ID', '');
@@ -43,11 +43,12 @@ if(preg_match('/localhost/',$_SERVER["HTTP_HOST"])) {
 		define('HTTP', 'https://'.$_SERVER["HTTP_HOST"].'/');
 		define('PATH', $_SERVER["DOCUMENT_ROOT"].'/');
 		define('INTERNAL_PATH', $_SERVER["DOCUMENT_ROOT"]);
-		define('TITLE', 'UXSEO [1億PVから研究した2020年最新のSEO決定版サービス]');
+		define('TITLE', 'UXSEO [3億PVから研究した2020年最新のSEO決定版サービス]');
 		define('META_KEYWORDS', 'UXSEO, SEO, SEOチェック, SEOツール, SEOキーワード, 格安');
 		define('META_DESCRIPTION', '日本トップSEO会社。様々なウェブサイトを魔法のように検索順位を上げます。SEOツール、SEOキーワード、SEOチェックも豊富に取り揃えています。');
 		define('TWITTER_ID', '');
 	}
+
 
 //var_dump(HTTP);
 /********************
@@ -86,10 +87,16 @@ UXSEO_Search_Analytics
 /************
 モデルarticle
 ************/
-//require_once(PATH.'classes/model/article/basis.php');
-//require_once(PATH.'classes/model/article/html.php');
-//$model_article_basis = new model_article_basis();
-//$model_article_html = new model_article_html();
+require_once(PATH.'classes/model/article/basis.php');
+require_once(PATH.'classes/model/article/html.php');
+$model_article_basis = new model_article_basis();
+$model_article_html = new model_article_html();
+/********************
+モデルmedia_post
+*********************/
+require_once(PATH.'classes/model/media/post/basis.php');
+$model_media_post_basis = new model_media_post_basis();
+
 /*********
 モデルinfo
 *********/
@@ -121,10 +128,10 @@ $model_analytics_html = new model_analytics_html();
 /*********
 モデルgzip
 *********/
-//require_once(PATH.'classes/model/gzip/basis.php');
-//require_once(PATH.'classes/model/gzip/html.php');
-//$model_gzip_basis = new model_gzip_basis();
-//$model_gzip_html = new model_gzip_html();
+require_once(PATH.'classes/model/gzip/basis.php');
+require_once(PATH.'classes/model/gzip/html.php');
+$model_gzip_basis = new model_gzip_basis();
+$model_gzip_html = new model_gzip_html();
 
 /*********
 モデルmail

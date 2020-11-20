@@ -15,13 +15,13 @@
 					<a href="<?php echo HTTP;?>#case">事例</a>
 				</div>
 				<div>
-					<a href="<?php echo HTTP;?>#plan">プラン</a>
+					<a href="<?php echo HTTP;?>#plan">プラン一覧</a>
 				</div>
 				<div>
 					<a href="<?php echo HTTP;?>seo-tool/">SEOツール</a>
 				</div>
 				<div>
-					<a href="<?php echo HTTP;?>study/">メディア</a>
+					<a href="<?php echo HTTP;?>media/">メディア</a>
 				</div>
 				<div>
 					<a href="<?php echo HTTP;?>contact/">Contact</a>

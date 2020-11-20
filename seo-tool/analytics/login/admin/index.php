@@ -103,6 +103,9 @@ for($a = 0; $a < 3650; $a++) {
 		$analytics_propaddy_list_html = model_analytics_html::analytics_propaddy_html_list_get($analytics_ticket_res);
 		// アナリティクスグラフURLリスト取得
 		$analytics_url_list_res = model_analytics_basis::analytics_url_list_get();
+		// 直近順位〜直近1年平均順位のレポートデータ取得
+		$analytics_url_list_res = model_analytics_basis::analytics_latest_various_data_get($ticket_turn_id, $default_date);
+
 		// テンプレート読み込み
 		require_once(PATH.'view/seo-tool/analytics/login/admin/template.php');
 	} // if($analytics_ticket_new_turn_id_res) {

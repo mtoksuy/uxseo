@@ -13,8 +13,15 @@ require_once('../../core.php');
 	// 作成リスト
 	$directory_array =array (
 		'index', 
-		'aboutus', 
 		'sitemap', 
+		'seo-tool', 
+		'media', 
+		'media/article/1', 
+		'media/article/2', 
+		'media/article/3', 
+		'media/article/4', 
+		'media/article/5', 
+		'media/article/6', 
 	);
 
 	// 作成
@@ -31,21 +38,12 @@ require_once('../../core.php');
 		}
 			// 複数の階層がある場合
 			else if(  preg_match('/\//', $value)   ) {
-/*
 				// 絶対パス
 				$directory_path = PATH.$value.'/';
+				unlink($directory_path.'index.html');
+				unlink($directory_path.'index.html.gz');
 				// html抽出
 				$gzip_article_html   = file_get_contents(HTTP.$value);
-				// ディレクトリカウント(後で使うかも)
-				$directory_count = substr_count($value, '/');
-				$directory_count++;
-				// ディレクトリ切り分け
-				$directory_explode = explode('/', $value);
-				// 最後のディレクトリ名取得
-				foreach($directory_explode as $last_key => $last_value) {
-					$last_directory = $last_value;
-				}
-*/
 			}
 				// 単発ディレクトリの場合
 				else {
@@ -56,7 +54,6 @@ require_once('../../core.php');
 					// html抽出
 					$gzip_article_html   = file_get_contents(HTTP.$value);
 				}
-
 		//コメントアウトを削除 一旦外し
 		$gzip_article_html = preg_replace('/<!--[\s\S]*?-->/s', '', $gzip_article_html);
 		// CSSインライン化
@@ -66,19 +63,5 @@ require_once('../../core.php');
 		// htmlファイルとgzipファイルを生成
 		model_gzip_basis::html_gzip_create($gzip_article_html, $directory_path);
 	}
-
-/*
-// rootファイル生成
-file_put_contents(PATH.'index.html', $html);
-	$file_org  = PATH.'index.html';
-	$file_gzip = $file_org.'.gz';
-	// 元ファイルの内容を読み込む
-	$code = file_get_contents($file_org);
-	// gzip圧縮処理して同一フォルダにファイルを作成
-	$gzip = gzopen($file_gzip ,'w9');
-	gzwrite($gzip ,$code);
-	gzclose($gzip);
-
-*/
 
 ?>

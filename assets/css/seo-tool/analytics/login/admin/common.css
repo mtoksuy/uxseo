@@ -10,7 +10,9 @@
 	padding: 0 0 18px 0;
 }
 .header .header_inner .logo h1 {
+/*
 	margin: 25px 0 0 0px;
+*/
 }
 
 .header .header_inner a {
@@ -430,14 +432,75 @@ height: 100%;
 
 
 
+/********************
+1260px以下の設定
+*********************/
+@media screen and (min-width: 0px) and (max-width: 1260px) {
 
 
+
+}
 
 
 /**************
-1028px以下の設定
+1024px以下の設定
 **************/
-@media screen and (min-width: 0px) and (max-width: 1028px) {
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+
+	/********
+	header
+	********/
+	.header .header_inner .logo h1 {
+		margin: 15px 0 0 15px;
+	}
+	/*******
+	drawer
+	*******/
+	#nav-drawer {
+		display:block;
+	}
+	.drawer {
+		display:none;
+	}
+	/**********
+	nav-open
+	**********/
+	#nav-open {
+		padding: 22px 15px 10px 15px;
+		margin: 7px 0 0 0;
+	}
+	/************
+	admin_ left
+	************/
+	.admin_left {
+		display: none;
+	}
+	/**********
+	summary
+	**********/
+	.summary .summary_inner {
+		margin: 90px 0 0 0;
+	}
+
+	/*********
+	analytics
+	*********/
+	.analytics .analytics_inner {
+		margin: 100px 0 0 0;
+	}
+
+
+}
+
+
+
+
+
+
+/*******************
+728px以下の設定
+********************/
+@media screen and (min-width: 0px) and (max-width: 728px) {
 
 }
 /**************
@@ -448,10 +511,19 @@ height: 100%;
 		width: 100%;
 		margin: 0 auto;
 	}
-	
 	.admin .admin_inner {
 		margin: 0 5px 0 5px;	
 	}
+	.main .main_inner {
+		margin: 0 0px;
+	}
+	.summary .summary_inner .content_box {
+		margin: 20px 0px 0 0px;
+	}
+
+
+
+
 }
 /**************
 480px以下の設定

@@ -1,0 +1,108 @@
+
+
+/******
+media
+******/
+.media {
+
+}
+.media .media_inner {
+
+}
+
+.media .media_inner .card_article {
+	margin: 0 30px;
+	font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
+	font-weight: 300;
+}
+
+.media .media_inner .card_article .card_article_inner {
+
+}
+.media .media_inner .card_article .card_article_inner ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.media .media_inner .card_article .card_article_inner ul li {
+	margin: 0 0 30px 0;
+}
+.media .media_inner .card_article .card_article_inner ul li article {
+
+}
+.media .media_inner .card_article .card_article_inner ul li article a {
+	padding: 15px;
+	display: block;
+	color: #292f33;
+}
+.media .media_inner .card_article .card_article_inner ul li article a:hover {
+	background-color:#f0f0f0;
+}
+.media .media_inner .card_article .card_article_inner ul li article a::link {
+	color: #292f33;
+}
+.media .media_inner .card_article .card_article_inner ul li article a::visited {
+	color: #292f33;
+}
+
+.media .media_inner .card_article .card_article_inner ul li article a .card_article_contents {
+
+}
+.media .media_inner .card_article .card_article_inner ul li article a .card_article_contents h1 {
+
+}
+.media .media_inner .card_article .card_article_inner ul li article a .card_article_contents .card_article_contents_summary {
+
+}
+.media .media_inner .card_article .card_article_inner ul li article a .card_article_contents .card_article_contents_time {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************
+1024px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+	/******
+	media
+	******/
+	.media .media_inner {
+		margin: 30px 0 0 0;
+	}
+	.media .media_inner .card_article {
+		margin: 0 0 0px 0;
+	}
+	.media .media_inner .card_article .card_article_inner ul li article a {
+	padding: 0 15px 0 15px;
+	}
+}
+/**************
+640px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 640px) {
+
+}
+/**************
+480px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 480px) {
+
+
+}
+/**************
+320px以下の設定
+**************/
+@media screen and (min-width: 0px) and (max-width: 320px) {
+
+}

@@ -92,6 +92,11 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             yAxes: [{
+				display: true,
+				scaleLabel: {
+					display: true,
+					labelString: '検索順位'
+				},
                 ticks: {
                     beginAtZero: true,
 					reverse: true, //y軸の反転(1位を上にして昇順で表示)
