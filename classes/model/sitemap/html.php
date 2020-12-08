@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?php
+class model_sitemap_html {
+	//-------------------------
+	//全記事リストHTML生成
+	//-------------------------
+	public static function article_list_html_create($article_res) {
+		foreach($article_res as $key => $value) {
+			$li_html_list = $li_html_list.'<li><a href="'.HTTP.'media/article/'.$value['primary_id'].'/">'.$value['title'].'</a></li>';
+		}
+		return $li_html_list;
+	}
+	//------------------
+	//sitemap.xml生成
+	//------------------
+	public static function sitemap_xml_create($article_res) {
+		foreach($article_res as $key => $value) {
+			$url_list = $url_list.'
+	<url>
+		<loc>'.HTTP.'media/article/'.$value['primary_id'].'/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>';
+		}
+	// 合体
+	$sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 	<url>
@@ -50,57 +74,7 @@
 		<loc>https://uxseo.jp/sitemap/</loc>
 		<changefreq>weekly</changefreq>
 		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/10/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/9/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/8/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/7/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/6/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/5/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/4/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/3/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/2/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>https://uxseo.jp/media/article/1/</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.7</priority>
-	</url>
+	</url>'.$url_list.'
 	<url>
 		<loc>https://uxseo.jp/seo-tool/analytics/</loc>
 		<changefreq>weekly</changefreq>
@@ -117,4 +91,10 @@
 		<priority>0.2</priority>
 	</url>
 
-</urlset>
+</urlset>';
+		return $sitemap_xml;
+	}
+
+
+
+}

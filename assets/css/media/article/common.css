@@ -67,7 +67,10 @@ article p {
 article ul.number {
 	list-style-type: decimal;
 }
-
+article ul.index {
+	list-style-type: decimal;
+	margin: 0 0 30px 0;
+}
 pre.code {
 	color: #e1e1e1;
 	padding: 15px;

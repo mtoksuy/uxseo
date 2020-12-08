@@ -6,6 +6,11 @@ sitemap
 .sitemap {
 
 }
+
+.sitemap h2 {
+	font-size: 20px;
+	margin: 30px 0 15px 0;
+}
 .sitemap .sitemap_inner {
 	width: 65%;
 	margin: 0 auto;

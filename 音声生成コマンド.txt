@@ -1,0 +1,1 @@
+say -v kyoko "" -o /Users/souya_matsuoka/Desktop/voice.aif
