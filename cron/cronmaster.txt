@@ -1,0 +1,4 @@
+
+
+11_send_sales_emails.phpはUXSEO_google_speed_listのcronで起動中
+

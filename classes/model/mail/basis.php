@@ -15,8 +15,8 @@ class model_mail_basis  {
 		error_reporting(0);
 		ini_set('display_errors', 1);
 		// qdmail呼び出し
-		require_once PATH."assets/library/php/qdmail/qdmail.php";
-		require_once PATH."assets/library/php/qdmail/qdsmtp.php";
+		require_once "/var/www/html/assets/library/php/qdmail/qdmail.php";
+		require_once "/var/www/html/assets/library/php/qdmail/qdsmtp.php";
 			$mail = new Qdmail();
 
 //			pre_var_dump($mail);
@@ -110,7 +110,7 @@ class model_mail_basis  {
 
 -------
 
-UXSEO [1億PVから研究した2020年最新のSEO決定版サービス]
+UXSEO [1億PVから研究した'.date('Y').'年最新のSEO決定版サービス]
 https://uxseo.jp/
 
 [運営会社]
@@ -208,7 +208,7 @@ https://spacenavi.jp/');
 
 -------
 
-UXSEO [1億PVから研究した2020年最新のSEO決定版サービス]
+UXSEO [1億PVから研究した'.date('Y').'年最新のSEO決定版サービス]
 https://uxseo.jp/
 
 [運営会社]
@@ -271,7 +271,7 @@ SEOの相談承りました。只今、担当の者がSlackの招待を送りま
 
 -------
 
-UXSEO [1億PVから研究した2020年最新のSEO決定版サービス]
+UXSEO [1億PVから研究した'.date('Y').'年最新のSEO決定版サービス]
 https://uxseo.jp/
 
 [運営会社]
@@ -308,7 +308,7 @@ https://uxseo.jp/seo-tool/analytics/signup/confirm/?hash='.$hash.'
 
 -------
 
-UXSEO [1億PVから研究した2020年最新のSEO決定版サービス]
+UXSEO [1億PVから研究した'.date('Y').'年最新のSEO決定版サービス]
 https://uxseo.jp/
 
 [運営会社]
@@ -331,10 +331,26 @@ https://spacenavi.jp/');
 			// qbメール送信
 			Model_Mail_Basis::qbmail_send($post_array);
 	}
-
-
-
-
+	//----------------
+	//営業メール送信
+	//----------------
+	public static function sales_mail($mail_array) { 
+		$post_array = array(
+			'from'    => '松岡 宗谷｜UXSEO <souya_matsuoka@uxseo.jp>',
+			'to'      => $mail_array['to'],
+			'subject' => $mail_array['subject'],
+			'message' => $mail_array['message'],
+			'param'   => array(
+				'host'     => 'localhost',
+				'port'     => 25,
+				'from'     => 'souya_matsuoka@uxseo.jp', 
+				'protocol' => 'SMTP',
+				'user'     => '',
+				'pass'     => '',),
+		);
+		// qbメール送信
+		Model_Mail_Basis::qbmail_send($post_array);
+	}
 
 
 
